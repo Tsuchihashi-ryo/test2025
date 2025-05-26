@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}Task Management Tool{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('index') }}" style="color: white; text-decoration: none;">Task Management Tool</a></h1>
+    </header>
+    
+    {% block navigation %}
+    <nav>
+        <a href="{{ url_for('add_task') }}">Add New Task</a>
+    </nav>
+    {% endblock %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ SCRIPT_NAME }} Task Manager. <a href="{{ url_for('index') }}">Back to Task List</a></p>
+    </footer>
+</body>
+</html>

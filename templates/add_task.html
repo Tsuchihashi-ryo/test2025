@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Task - Task Management Tool{% endblock %}
+
+{% block navigation %}
+    {# This page doesn't need the main navigation, or override if specific navigation is needed #}
+{% endblock %}
+
+{% block content %}
+    <h2>Add New Task</h2>
+    <form method="POST" action="{{ url_for('add_task') }}">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <button type="submit">Add Task</button>
+    </form>
+{% endblock %}
